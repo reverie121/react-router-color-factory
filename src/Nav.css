@@ -1,5 +1,10 @@
 .Nav {
     background-color: black;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .Nav a {

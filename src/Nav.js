@@ -7,8 +7,9 @@ function Nav( { colors } ) {
     return(
         <div className="Nav">
             <Link to="../">Color List</Link>
+            <Link to="../colors/new">Add</Link>
             {colors.map(c => 
-                <Link to={`../colors/${c}`}>{c}</Link>
+                <Link to={`../colors/${c}`} key={c}>{c}</Link>
                 )}
         </div>
     )

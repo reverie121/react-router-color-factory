@@ -7,6 +7,8 @@ function ColorList( { colors } ) {
     return(
         <div className="ColorList">
             <h2>Welcome to the Color Factory!</h2>
+            <h3><Link to="./colors/new">Add a Color</Link></h3>
+            <h4>or</h4>
             <h3>Choose a Color...</h3>
             <div className="ColorsContainer">
                 {colors.map(c => 

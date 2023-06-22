@@ -4,12 +4,13 @@ import { Switch, Route, Redirect } from 'react-router-dom/cjs/react-router-dom.m
 
 import Nav from './Nav';
 import ColorList from './ColorList';
+import NewColorForm from './NewColorForm';
 import ColorPage from './ColorPage';
 
 import './App.css';
 
 function App( {colors} ) {
-    const [userColors, setUsercolors] = useState(colors)
+    const [userColors, setUserColors] = useState(colors)
     return (
         <div className="App">
             <Nav colors={userColors} />
@@ -17,8 +18,11 @@ function App( {colors} ) {
                 <Route exact path="/colors" >
                     <ColorList colors={userColors} />
                 </Route>
+                <Route exact path="/colors/new" >
+                    <NewColorForm userColors={userColors} setUserColors={setUserColors}/>
+                </Route>                
                 <Route path="/colors/:colorName" >
-                    <ColorPage colors={userColors} />
+                    <ColorPage userColors={userColors} />
                 </Route>
                 <Redirect to="/colors" />
             </Switch>      
